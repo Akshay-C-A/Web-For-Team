@@ -37,7 +37,7 @@
                         </div>
                 </nav>
 
-                <section class="home" id="home">
+                <section class="home pt-3 " id="home">
                         <img src="home.png" class="img-fluid" alt="Responsive image">
                 </section>
 
@@ -58,8 +58,8 @@
                         <span style="--i:14">W</span>      
                 </div>
 
-                <section class="club" id="club">
-                        <section class="container d-flex align-items-center justify-content-center mt-5 mb-5 pt-5">
+                <section class="club d-flex align-items-center justify-content-center flex-column" id="club">
+                        <section class="container d-flex align-items-center justify-content-center mt-5 mb-5 pt-5 pb-2" id="clubcontainer">
                                 <div class="about container d-flex align-items-center justify-content-around">
                                         <div class="row">
                                           <div class="col d-flex align-items-center justify-content-center flex-column ">
@@ -89,14 +89,82 @@
                                           </div>
                                         </div>
                                 </div>
+                        </section>
+                                <div class="container d-flex align-items-center justify-content-center" id="link container ">
+                                        <a href="https://www.indiansuperleague.com/clubs/498-kerala-blasters-fc-profile">
+                                                <div class="word"></div>
+                                        </a>
+                                </div>
                 </section>
 
-                
-
-                
+                <section claas="contactus pt-5" id="contactus">
+                        <h1  class="contactus pb-5" style="color: white;">Contact Us</h1>
+                        <div class="logos">
+                                <a href="">
+                                        <img src="" class="img-fluid px-3" alt="Responsive image">
+                                </a>
+                                <a href="">
+                                        <img src="" class="img-fluid px-3" alt="Responsive image" >
+                                </a>
+                                <a href="">
+                                        <img src="" class="img-fluid px-3" alt="Responsive image">
+                                </a>
+                                <a href="">
+                                        <img src="" class="img-fluid px-3" alt="Responsive image">
+                                </a>
+                        </div>
+                </section>
         </section>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+        var words = ['Click here for seeing Team Members->>'],
+    part,
+    i = 0,
+    offset = 0,
+    len = words.length,
+    forwards = true,
+    skip_count = 0,
+    skip_delay = 15,
+    speed = 70;
+var wordflick = function () {
+  setInterval(function () {
+    if (forwards) {
+      if (offset >= words[i].length) {
+        ++skip_count;
+        if (skip_count == skip_delay) {
+          forwards = false;
+          skip_count = 0;
+        }
+      }
+    }
+    else {
+      if (offset == 0) {
+        forwards = true;
+        i++;
+        offset = 0;
+        if (i >= len) {
+          i = 0;
+        }
+      }
+    }
+    part = words[i].substr(0, offset);
+    if (skip_count == 0) {
+      if (forwards) {
+        offset++;
+      }
+      else {
+        offset--;
+      }
+    }
+    $('.word').text(part);
+  },speed);
+};
+
+$(document).ready(function () {
+  wordflick();
+});
+        </script>
 </body>
 </html>

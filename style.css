@@ -12,8 +12,8 @@ body{
         align-items: center;
         justify-content: center;
         background-color: #f2dd21;
-        height: 100vh;
         width: 100vw;
+        flex-direction: column;
 }
 
 a.nav-link{
@@ -29,5 +29,41 @@ a.btn.btn-primary:hover{
         color: #f2dd21!important;
 }
 
+* {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        background-color: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .waviy {
+        position: relative;
+      }
+      .waviy span {
+        position: relative;
+        display: inline-block;
+        font-size: 30px;
+        color: #fff;
+        text-transform: uppercase;
+        animation: flip 2s infinite;
+        animation-delay: calc(.2s * var(--i))
+      }
+      @keyframes flip {
+        0%,80% {
+          transform: rotateY(360deg) 
+        }
+      }
 
-
+#club{
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#007bff;
+}
